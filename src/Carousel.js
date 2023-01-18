@@ -20,6 +20,7 @@ import Card from "./Card";
 
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(true);
+  // have less state
 
   const currCard = photos[currCardIdx];
   const total = photos.length;
@@ -34,6 +35,7 @@ import Card from "./Card";
     if(currCardIdx < total - 1){
       setCurrCardIdx(currCardIdx + 1);
     }
+    // controlArrows()
 
     setShowLeft(true);
   }
@@ -45,11 +47,23 @@ import Card from "./Card";
       setCurrCardIdx(currCardIdx - 1);
       setShowRight(true)
     }
+    // controlArrows()
 
     if(currCardIdx === 1){
       setShowLeft(false);
     }
   }
+
+
+  // function controlArrows() {
+
+    // if (currCardIdx === 0) showLeft(false);
+    // if (currCardIdx > 0) showLeft(true);
+    // if (currCardIdx < total-1) showRight(true);
+    // if (currCardIdx === total-1) showRight(false);
+  // }
+
+  // add and remove css class instead of removing from DOM.
 
   return (
     <div className="Carousel">
